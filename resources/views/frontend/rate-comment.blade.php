@@ -22,6 +22,12 @@
               font-family: 'Lato';
           }
 
+          p {
+            padding-top: 10px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+          }
+
           .container {
               text-align: center;
 

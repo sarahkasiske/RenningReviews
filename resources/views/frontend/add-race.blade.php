@@ -13,6 +13,11 @@
                 height: 100%;
             }
 
+            p { padding-top: 10px;
+              padding-bottom: 0;
+              margin-bottom: 0;
+            }
+
             body {
                 margin: 70;
                 padding: 0;
