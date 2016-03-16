@@ -14,12 +14,11 @@
 // Route::get('/', function() {
 //   return view('welcome');
 // });
-
 Route::get('hello', 'ControllerTwo@index')->name('sayhello');
 
 Route::post('hello', 'ControllerTwo@index')->name('saidhello');
 
-Route::get('add-race', 'ControllerTwo@races')->name('races');
+Route::get('/', 'ControllerTwo@races')->name('races');
 
 Route::post('add-race', 'ControllerTwo@new_race')->name('new_race');
 
