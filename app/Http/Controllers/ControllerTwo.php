@@ -46,7 +46,7 @@ class ControllerTwo extends Controller
 
   public function new_comment(Request $request) {
     $comment = new comment;
-    $comment->comment = $request->comments;
+    $comment->comment = $request->comment;
     $comment->user_id= $request->user_id = 1;
     $comment->user_id= $request->race_id = 1;
     $comment->save();
