@@ -41,7 +41,8 @@ class ControllerTwo extends Controller
 
   public function comments() {
     $comments = comment::all();
-    return view('frontend.rate-comment', ["comments" => $comments]);
+    $ratings = rating::all();
+    return view('frontend.rate-comment', ["comments" => $comments, "ratings" => $ratings]);
 }
 
   public function new_comment(Request $request) {
@@ -51,15 +52,6 @@ class ControllerTwo extends Controller
     $comment->user_id= $request->race_id = 1;
     $comment->save();
     $comments = comment::all();
-    return view('frontend.rate-comment', ["comments" => $comments]);
-}
-
-  public function ratings() {
-    $ratings = rating::all();
-    return view('frontend.rate-comment', ["ratings" => $ratings]);
-}
-
-  public function new_rating(Request $request) {
     $rating = new rating;
     $rating ->rating = $request->rating;
     $rating ->participation= $request->participation;
@@ -67,10 +59,8 @@ class ControllerTwo extends Controller
     $rating ->user_id= $request->race_id = 1;
     $rating ->save();
     $ratings = rating::all();
-    return view('frontend.rate-comment', ["ratings" => $ratings]);
+    return view('frontend.rate-comment', ["comments" => $comments,  "ratings" => $ratings]);
 }
-
-
 
 
 }

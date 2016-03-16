@@ -82,7 +82,14 @@
             {!! Form::close() !!}
             </div>
 
-              <div class="col-md-6">
+
+            <div class="col-md-6">
+              <div id="commentlist">
+                <h2>Existing Comments</h2>
+                  @foreach($comments as $comment)
+                    <p>{!! $comment->comment!!}</p>
+                  @endforeach
+
                 <div id="ratinglist">
                   <h2>Existing ratings and Participation</h2>
                     @foreach($ratings as $rating)

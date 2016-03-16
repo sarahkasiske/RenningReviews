@@ -14,11 +14,12 @@
 // Route::get('/', function() {
 //   return view('welcome');
 // });
+
 Route::get('hello', 'ControllerTwo@index')->name('sayhello');
 
 Route::post('hello', 'ControllerTwo@index')->name('saidhello');
 
-Route::get('/', 'ControllerTwo@races')->name('races');
+Route::get('add-race', 'ControllerTwo@races')->name('races');
 
 Route::post('add-race', 'ControllerTwo@new_race')->name('new_race');
 
@@ -26,9 +27,9 @@ Route::get('rate-comment', 'ControllerTwo@comments')->name('comments');
 
 Route::post('rate-comment', 'ControllerTwo@new_comment')->name('new_comment');
 
-Route::get('rate-comment', 'ControllerTwo@ratings')->name('ratings');
+//Route::get('rate-comment', 'ControllerTwo@ratings')->name('ratings');
 
-Route::post('rate-comment', 'ControllerTwo@new_rating')->name('new_rating');
+//Route::post('rate-comment', 'ControllerTwo@new_rating')->name('new_rating');
 
 // Route::get('user', 'ControllerTwo@users')->name('user');
 //
@@ -47,4 +48,10 @@ Route::post('rate-comment', 'ControllerTwo@new_rating')->name('new_rating');
 
 Route::group(['middleware' => ['web']], function () {
     //
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });
