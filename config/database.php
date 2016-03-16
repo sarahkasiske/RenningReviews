@@ -70,7 +70,8 @@ return [
             'host'     => env('DB_HOST', 'localhost'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'password' => env('DB_PASSWORD', 'unlh1mL2AkI9c1CM7cKG
+'),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
