@@ -55,9 +55,10 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'runningreview'),
-            'username'  => env('DB_USERNAME', 'sarah'),
-            'password'  => env('DB_PASSWORD', 'sarah' ),
+            'database'  => env('DB_DATABASE', 'forge'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', 'unlh1mL2AkI9c1CM7cKG
+' ),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
@@ -70,8 +71,7 @@ return [
             'host'     => env('DB_HOST', 'localhost'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', 'unlh1mL2AkI9c1CM7cKG
-'),
+            'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
