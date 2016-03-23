@@ -38,6 +38,15 @@ class ControllerTwo extends Controller
     	return view('frontend.add-race', ["races" => $races]);
 }
 
+public function races_json() {
+        $races = race::all();
+        return response()->json($races);
+    }
+
+  // public function race_name_json($name) {
+  //     $races = race::find($name);
+  //     return response()->json($races);
+  //   }
 
   public function comments() {
     $comments = comment::all();
@@ -61,6 +70,16 @@ class ControllerTwo extends Controller
     $ratings = rating::all();
     return view('frontend.rate-comment', ["comments" => $comments,  "ratings" => $ratings]);
 }
+
+public function comments_json() {
+        $comments = comment::all();
+        return response()->json($comments);
+    }
+
+public function ratings_json() {
+        $ratings = rating::all();
+        return response()->json($ratings);
+    }
 
 
 }

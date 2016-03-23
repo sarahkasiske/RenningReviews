@@ -27,6 +27,14 @@ Route::get('rate-comment', 'ControllerTwo@comments')->name('comments');
 
 Route::post('rate-comment', 'ControllerTwo@new_comment')->name('new_comment');
 
+Route::get('races-json', 'ControllerTwo@races_json')->name('rjson');
+
+Route::get('comments-json', 'ControllerTwo@comments_json')->name('cjson');
+
+Route::get('ratings-json', 'ControllerTwo@ratings_json')->name('r2json');
+
+Route::get('race-name-json{name}', 'ControllerTwo@race_name_json')->name('rnjson');
+
 //Route::get('rate-comment', 'ControllerTwo@ratings')->name('ratings');
 
 //Route::post('rate-comment', 'ControllerTwo@new_rating')->name('new_rating');
