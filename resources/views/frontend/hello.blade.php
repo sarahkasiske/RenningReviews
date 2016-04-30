@@ -38,7 +38,24 @@
     <body>
         <div class="container">
             <div class="content">
-             Hello {!! $obj->firstName !!}
+
+              <div class="col-md-6">
+                <div id="racelist">
+                  <h2>Existing Races</h2>
+                  @foreach($events as $event)
+                    <h3>{!! $event->race_name !!}</h3>
+                    <p>{!! $event->city !!}</p>
+                    <p>{!! $event->state!!}</p>
+                    <p>{!! $event->terrain !!}</p>
+                    <p>{!! $event->link !!}</p>
+                  @endforeach
+                </div>
+                </div>
+
+            <hr />
+      
+
+
 
 
             </div>
