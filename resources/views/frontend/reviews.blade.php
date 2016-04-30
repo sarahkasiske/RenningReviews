@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>reviews</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -38,23 +38,17 @@
     <body>
         <div class="container">
             <div class="content">
+             Hello {!! $obj->firstName !!}
 
-              <div class="col-md-6">
-                <div id="racelist">
-                  <h2>Existing Races</h2>
-                  @foreach($events as $event)
-                    <h3>{!! $event->race_name !!}</h3>
-                    <p>{!! $event->city !!}</p>
-                    <p>{!! $event->state!!}</p>
-                    <p>{!! $event->terrain !!}</p>
-                    <p>{!! $event->link !!}</p>
-                  @endforeach
-                </div>
-                </div>
-
-            <hr />
-      
-
+             <div id="reviewlist">
+             <h2>Existing Reviews</h2>
+             @foreach($reviews as $review)
+               <h3>{!! $review->title !!}</h3>
+               <p>{!! $review->review !!}</p>
+               <p>{!! $review->participation !!}</p>
+               <p>{!! $review->overall !!}</p>
+             @endforeach
+             </div>
 
 
 
