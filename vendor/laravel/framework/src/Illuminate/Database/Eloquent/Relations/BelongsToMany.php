@@ -115,23 +115,7 @@ class BelongsToMany extends Relation
     }
 
     /**
-     * Set a "where in" clause for a pivot table column.
-     *
-     * @param  string  $column
-     * @param  mixed   $values
-     * @param  string  $boolean
-     * @param  bool    $not
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function wherePivotIn($column, $values, $boolean = 'and', $not = false)
-    {
-        $this->pivotWheres[] = func_get_args();
-
-        return $this->whereIn($this->table.'.'.$column, $values, $boolean, $not);
-    }
-
-    /**
-     * Set an "or where" clause for a pivot table column.
+     * Set an or where clause for a pivot table column.
      *
      * @param  string  $column
      * @param  string  $operator
@@ -141,18 +125,6 @@ class BelongsToMany extends Relation
     public function orWherePivot($column, $operator = null, $value = null)
     {
         return $this->wherePivot($column, $operator, $value, 'or');
-    }
-
-    /**
-     * Set an "or where in" clause for a pivot table column.
-     *
-     * @param  string  $column
-     * @param  mixed   $values
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function orWherePivotIn($column, $values)
-    {
-        return $this->wherePivotIn($column, $values, 'or');
     }
 
     /**

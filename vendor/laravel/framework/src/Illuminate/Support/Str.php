@@ -2,6 +2,7 @@
 
 namespace Illuminate\Support;
 
+use RuntimeException;
 use Illuminate\Support\Traits\Macroable;
 
 class Str
@@ -219,6 +220,8 @@ class Str
      *
      * @param  int  $length
      * @return string
+     *
+     * @throws \RuntimeException
      */
     public static function random($length = 16)
     {
@@ -241,11 +244,25 @@ class Str
      * @param  int  $length
      * @return string
      *
+     * @throws \RuntimeException
+     *
      * @deprecated since version 5.2. Use random_bytes instead.
      */
     public static function randomBytes($length = 16)
     {
-        return random_bytes($length);
+        if (PHP_MAJOR_VERSION >= 7 || defined('RANDOM_COMPAT_READ_BUFFER')) {
+            $bytes = random_bytes($length);
+        } elseif (function_exists('openssl_random_pseudo_bytes')) {
+            $bytes = openssl_random_pseudo_bytes($length, $strong);
+
+            if ($bytes === false || $strong === false) {
+                throw new RuntimeException('Unable to generate random string.');
+            }
+        } else {
+            throw new RuntimeException('OpenSSL extension or paragonie/random_compat is required for PHP 5 users.');
+        }
+
+        return $bytes;
     }
 
     /**
@@ -395,7 +412,7 @@ class Str
         if (! ctype_lower($value)) {
             $value = preg_replace('/\s+/', '', $value);
 
-            $value = static::lower(preg_replace('/(.)(?=[A-Z])/', '$1'.$delimiter, $value));
+            $value = strtolower(preg_replace('/(.)(?=[A-Z])/', '$1'.$delimiter, $value));
         }
 
         return static::$snakeCache[$key] = $value;

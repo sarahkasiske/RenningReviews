@@ -254,8 +254,8 @@ class Mailer implements MailerContract, MailQueueContract
     /**
      * Build the callable for a queued e-mail job.
      *
-     * @param  \Closure|string  $callback
-     * @return string
+     * @param  mixed  $callback
+     * @return mixed
      */
     protected function buildQueueCallable($callback)
     {
@@ -284,12 +284,12 @@ class Mailer implements MailerContract, MailQueueContract
      * Get the true callable for a queued e-mail message.
      *
      * @param  array  $data
-     * @return \Closure|string
+     * @return mixed
      */
     protected function getQueuedCallable(array $data)
     {
         if (Str::contains($data['callback'], 'SerializableClosure')) {
-            return (new Serializer)->unserialize($data['callback']);
+            return unserialize($data['callback'])->getClosure();
         }
 
         return $data['callback'];

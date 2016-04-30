@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class race extends Model
 {
     public $timestamps=false;
-    public function comments() {
+    public function races() {
       return $this->hasMany('App\comment');
   }
-     public function ratings() {
+     public function racesTwo() {
       return $this->hasMany('App\rating');
     }
 }

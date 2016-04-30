@@ -58,7 +58,7 @@ class View implements ArrayAccess, ViewContract
      * @param  \Illuminate\View\Engines\EngineInterface  $engine
      * @param  string  $view
      * @param  string  $path
-     * @param  mixed  $data
+     * @param  array   $data
      * @return void
      */
     public function __construct(Factory $factory, EngineInterface $engine, $view, $path, $data = [])

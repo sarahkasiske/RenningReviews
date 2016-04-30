@@ -1,23 +1,47 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Routes File
+|--------------------------------------------------------------------------
+|
+| Here is where you will register all of the routes in an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
 
-Route::get('/about', 'PagesController@getAbout');
+// Route::get('/', function() {
+//   return view('welcome');
+// });
 
-Route::get('/', 'PagesController@getIndex');
+Route::get('hello', 'ControllerTwo@index')->name('sayhello');
 
+Route::post('hello', 'ControllerTwo@index')->name('saidhello');
 
-Route:: resource('events', 'EventController');
+Route::get('add-race', 'ControllerTwo@races')->name('races');
 
+Route::post('add-race', 'ControllerTwo@new_race')->name('new_race');
 
-Route:: resource('reviews', 'ReviewController');
+Route::get('rate-comment', 'ControllerTwo@comments')->name('comments');
 
-// Route::get('events.create', 'ReviewController@distance')->name('distance');
+Route::post('rate-comment', 'ControllerTwo@new_comment')->name('new_comment');
+
+Route::get('races-json', 'ControllerTwo@races_json')->name('rjson');
+
+Route::get('comments-json', 'ControllerTwo@comments_json')->name('cjson');
+
+Route::get('ratings-json', 'ControllerTwo@ratings_json')->name('r2json');
+
+Route::get('race-name-json{name}', 'ControllerTwo@race_name_json')->name('rnjson');
+
+//Route::get('rate-comment', 'ControllerTwo@ratings')->name('ratings');
+
+//Route::post('rate-comment', 'ControllerTwo@new_rating')->name('new_rating');
+
+// Route::get('user', 'ControllerTwo@users')->name('user');
 //
-// Route::post('events.create', 'ReviewController@newDistance')->name('newDistance');
-
-
-
-
+// Route::post('user', 'ControllerTwo@users)->name('new_user');
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +53,9 @@ Route:: resource('reviews', 'ReviewController');
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+
 Route::group(['middleware' => ['web']], function () {
-    Route::get('race/{slug}',['as'=> 'race.single','uses' =>'RaceController@getSingle'])->where('slug', '[\w\d\-\_]+');
-    Route::get('race',['uses' => 'RaceController@getIndex', 'as' => 'race.index' ]);
-    Route::get('/about',  'PagesController@getAbout');
-    Route::get('/', 'PagesController@getIndex');
-    Route:: resource('events', 'EventController');
-    Route:: resource('reviews', 'ReviewController');
+    //
 });
 
 Route::group(['middleware' => 'web'], function () {
