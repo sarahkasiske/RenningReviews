@@ -17,9 +17,11 @@ class EventTable extends Migration
       $table->integer('user_id');
       $table->string('distance_id');
       $table->string('race_name');
+      $table->string('picture');
       $table->string('month');
       $table->string('city');
       $table->string('state');
+      $table->string('race_distance');
       $table->boolean('annual_occurence');
       $table->string('terrain');
       $table->string('description');

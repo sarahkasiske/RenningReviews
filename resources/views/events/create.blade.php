@@ -9,7 +9,10 @@
             <div class="col-md-8 col-md-offset-2">
               <h1>Add a Race</h1>
               <hr>
+            
               {!! Form::open(array('route' => 'events.store')) !!}
+
+              {{ Form::file('picture', ['class' => 'field']) }}
 
                <!-- Race Name  -->
                {{ form::label('race_name','Race Name:')}}
@@ -44,6 +47,10 @@
                {{ form::label('state','State:')}}
                {!! Form::text('state', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Race State')) !!}
 
+               <!-- Distances  -->
+               {{ form::label('race_distance','Race Distance/Distances:')}}
+               {!! Form::text('race_distance', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Enter Race Distances')) !!}
+
               <!-- Occurence  -->
               {{ form::label('annual_occurence','Does this Race Occur Every Year?')}}
               {{ Form::select('annual_occurence', [
@@ -70,8 +77,11 @@
               {!! Form::close() !!}
 
 
-
-
+<!--
+<label class="file">
+  <input type="file" id="file">
+  <span class="file-custom"></span>
+</label> -->
 
 
             </div>

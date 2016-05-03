@@ -60,9 +60,6 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/race') }}">Races</a></li>
                 </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/add-review') }}">Add Review</a></li>
-                </ul>
 
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/about') }}">About</a></li>
@@ -82,8 +79,8 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                                <li><a href="{{route('events.index') }}"><i class="fa fa-btn fa-star"></i>My Races</a></li>
-                                <li><a href="{{route('events.create') }}"><i class="fa fa-btn fa-plus"></i>Add Race</a></li>
+                                <li><a href="{{route('events.index') }}"><i class="fa fa-btn fa-star"></i> Races</a></li>
+                                <li><a href="{{route('events.create') }}"><i class="fa fa-btn fa-plus"></i>Add a Race</a></li>
                             </ul>
                         </li>
                     @endif

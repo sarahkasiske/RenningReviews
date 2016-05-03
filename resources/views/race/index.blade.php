@@ -14,7 +14,7 @@
             <h1>{{ $event->race_name }}</h1>
             <h5>Published:{{ date('M j, Y', strtotime($event->created_at)) }}</h5>
             <p>Description:{{ substr($event->description, 0, 250)}}{{ strlen($event->description) > 250 ? "..." : "" }}</p>
-          <a href="{{ route('race.single', $event->id ) }}" class = "btn btn-primary">Read More</a>
+            <a href="{{ url('race/'.$event->slug) }}" class="btn btn-primary">Read More</a>
           <hr
         </div>
       </div>

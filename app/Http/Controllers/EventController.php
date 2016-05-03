@@ -9,10 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Event;
 use Session;
 
-
 class EventController extends Controller
 {
-
     public function __construct() {
         $this->middleware('auth');
     }
@@ -69,6 +67,8 @@ class EventController extends Controller
       $event->annual_occurence = $request->annual_occurence;
       $event->terrain = $request->terrain;
       $event->link = $request->link;
+      $event->picture = $request->picture;
+      $event->race_distance = $request->race_distance;
 
       $event->save();
 
@@ -91,11 +91,6 @@ class EventController extends Controller
       return view('events.show')->with('event', $event);
     }
 
-    // public function showDistance($id)
-    // {
-    //   $distance = Distance::find($id);
-    //   return view('events.show')->with('distance', $distance);
-    // }
     /**
      * Show the form for editing the specified resource.
      *
@@ -133,16 +128,16 @@ class EventController extends Controller
 
         else {
           $this->validate($request, array(
-            'race_name' => 'required|max:255',
-            'slug' => 'required|alpha_dash|min:5|max:255|unique:events,slug',
-            'description' => 'required'
+            // 'race_name' => 'required|max:255',
+            // 'slug' => 'required|alpha_dash|min:5|max:255|unique:events,slug',
+            // 'description' => 'required'
           ));
         }
 
 
         //Save data to database
-        $event = Event::find($id);
 
+        $event = Event::find($id);
         $event->race_name = $request->input('race_name');
         $event->slug= $request->input('slug');
         $event->month = $request->input('month');

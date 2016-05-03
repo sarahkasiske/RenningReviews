@@ -1,3 +1,75 @@
-.btn-h1-spacing {
+.margin-top {
   margin-top: 20px;
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.btn-spacing {
+  margin-top: 15px;
+  padding-left: 68px;
+  padding-right:68px;
+  margin-bottom: 15px;
+}
+
+.navbar-default .navbar-brand,.navbar-default .navbar-nav li a, .navbar-default .navbar-toggle .icon-bar {
+    color: white;
+    font-weight: 300;
+}
+
+.navbar-toggle {
+    border: none;
+
+}
+
+.navbar-default {
+    background-color: #FF4043;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.btn-primary {
+    background-color: white;
+    border: 4;
+    border-radius: 0;
+    border-color: #FF3243;
+    color: #262424;
+}
+
+
+.btn-primary:hover, btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover{
+  color: #262424;
+  background-color: #FFF9F8;
+  border-color: #FF3243;
+}
+
+.btn-success:hover, .btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover {
+      color: #262424;
+      background-color: #D8F3FF;
+      border-color: #3BC5FF;
+}
+
+.btn-success {
+    background-color: white;
+    border: 6;
+    border-radius: 0;
+    border-color: #3BC5FF;
+    color: #262424;
+}
+
+
+img {
+  width: 100%;
+}
+
+.navbar{
+  margin-bottom:0;
 }

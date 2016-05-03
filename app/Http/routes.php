@@ -5,6 +5,8 @@ Route::get('/about', 'PagesController@getAbout');
 
 Route::get('/', 'PagesController@getIndex');
 
+Route::get('/view', 'EventController@getView');
+
 
 Route:: resource('events', 'EventController');
 

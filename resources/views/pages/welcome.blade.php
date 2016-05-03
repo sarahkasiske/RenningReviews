@@ -1,20 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
+<img src="/Orlen_Warsaw_Marathon_2014_al._KEN.JPG" alt="Mountain View">
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 col-md-offset-1">
-        <div class="row">
-              <div class="col-md-10">
-                <div class="jumbotron">
-                  <h2>Find a Race!</h2>
-
-                  <p class="lead">Search will go here</p>
-                  <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
-                </div>
-              </div>
-            </div>
 
 
 

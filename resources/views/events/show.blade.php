@@ -14,6 +14,8 @@
     <p> <strong>Description:</strong> {{ $event->description }}</p>
     <p> <strong>Distance:</strong> {{ $event->distance}}</p>
     <p> <strong>Race Link:</strong> {{ $event->link}}</p>
+    <p> <strong>Image:</strong> {{ $event->race_distance}}</p>
+    <p> <strong>Distances:</strong></p> <img> {{ $event->picture}} </img>
 
   </div>
 
@@ -37,18 +39,18 @@
         </dl>
         <hr>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             {!! Html::linkRoute('events.edit', 'Edit', array($event->id), array('class' => 'btn btn-primary btn-block')) !!}
 
           </div>
-          <div class="col-sm-6">
+          <!-- <div class="col-sm-6">
               {!! Form::open(['route' =>['events.destroy', $event->id], 'method' => 'DELETE']) !!}
 
-              {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
+              {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!} -->
 
               {!! Form::close() !!}
 
-          </div>
+          <!-- </div> -->
         </div>
       </div>
    </div>

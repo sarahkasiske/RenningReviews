@@ -41,6 +41,9 @@
                {{ form::label('review','Review:')}}
                {!! Form::textarea('review', null, array('class' => 'form-control', 'placeholder' => 'Write a Review')) !!}
 
+               {{ Form::hidden('event_id', '$event->id') }}
+               {{ $event->id }}
+
                {!! Form::submit('Add Review', array('class'=>'btn btn-success btn-lg btn-block', 'style'=> 'margin-top: 20px;')); !!}
 
               {!! Form::close() !!}

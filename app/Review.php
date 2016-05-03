@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-      public function events() {
-          return $this->hasOne('App\Event');
-      }
+  protected $fillable = [
+    'event_id'
+  ];
+    public function events() {
+        return $this->hasOne('App\Event');
+    }
 }

@@ -54,7 +54,7 @@ class ReviewController extends Controller
       $review = new Review;
 
       $review->user_id= $request->user_id = 1;
-      $review->event_id= $request->event_id = 1;
+      $review->event_id= $request->event_id;
       $review->participation= $request->participation;
       $review->overall= $request->overall;
       $review->packet_pickup= $request->packet_pickup;
@@ -67,8 +67,7 @@ class ReviewController extends Controller
       // Success Message
       Session::flash('success', 'Your review was succesfully added!');
 
-      // redirect to another page
-      return redirect()->route('reviews.show', $review->id);
+      return redirect()->back();
 
     }
 
