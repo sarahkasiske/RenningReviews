@@ -18,7 +18,7 @@
 
                <!-- Slug -->
                {{ form::label('slug','URL')}}
-               {!! Form::text('slug', null, array('class' => 'form-control', 'required', 'minlength' => '5','maxlength' => '255', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Race Name')) !!}
+               {!! Form::text('slug', null, array('class' => 'form-control', 'required', 'minlength' => '5','maxlength' => '255', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'URL Name')) !!}
 
                <!-- Race Month  -->
                 {{ form::label('month','Race Month:')}}
@@ -69,12 +69,9 @@
                  , 'array', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]
                 ) }}
 
-      
-
-
               <!-- Race Desctiption -->
-               {{ form::label('description','Race Description:')}}
-               {!! Form::textarea('description', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Write a Description')) !!}
+               {   {{ form::label('description','Race Description:')}}
+                  {!! Form::textarea('description', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Write a Description')) !!}
 
               <!-- Race Link  -->
               {{ form::label('link','Race Link:')}}

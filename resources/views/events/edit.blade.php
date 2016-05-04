@@ -10,8 +10,8 @@
      {{ form::label('race_name','Race Name:')}}
      {!! Form::text('race_name', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Race Name')) !!}
 
-        {{ form::label('slug','URL')}}
-        {!! Form::text('slug', null, array('class' => 'form-control', 'required', 'minlength' => '5','maxlength' => '255', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Race Name')) !!}
+      {{ form::label('slug','URL')}}
+      {!! Form::text('slug', null, array('class' => 'form-control', 'required', 'minlength' => '5','maxlength' => '255', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'URL Name')) !!}
 
      <!-- Race Month  -->
       {{ form::label('month','Race Month:')}}

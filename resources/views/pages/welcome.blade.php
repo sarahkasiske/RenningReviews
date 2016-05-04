@@ -24,7 +24,9 @@
 
           @endforeach
 
-
+              <div class = 'text-center'>
+                {!! $events->links(); !!}
+              </div>
             </div>
         </div>
     </div>

@@ -66,6 +66,7 @@ class EventController extends Controller
       $event->state = $request->state;
       $event->annual_occurence = $request->annual_occurence;
       $event->terrain = $request->terrain;
+      $event->description = $request->description;
       $event->link = $request->link;
       $event->race_distance = $request->race_distance;
 
@@ -120,14 +121,14 @@ class EventController extends Controller
         $event = Event::find($id);
         if ($request->input('slug') == $event->slug){
         $this->validate($request, array(
-          'race_name' => 'required|max:255',
+          'race_name' => 'required',
           'description' => 'required'
           ));
         }
 
         else {
           $this->validate($request, array(
-            'race_name' => 'required|max:255',
+            'race_name' => 'required',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:events,slug',
             'description' => 'required'
           ));

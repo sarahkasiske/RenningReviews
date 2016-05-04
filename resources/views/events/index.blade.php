@@ -47,6 +47,7 @@
           </tbody>
         </table>
 
+
         <div class = 'text-center'>
           {!! $events->links(); !!}
 
