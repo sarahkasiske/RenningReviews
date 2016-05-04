@@ -70,7 +70,7 @@
                 ) }}
 
               <!-- Race Desctiption -->
-               {   {{ form::label('description','Race Description:')}}
+                  {{ form::label('description','Race Description:')}}
                   {!! Form::textarea('description', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Write a Description')) !!}
 
               <!-- Race Link  -->

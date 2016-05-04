@@ -9,6 +9,8 @@
 
             <div class="row">
               <div class="col-md-10">
+                <h1>Races</h1>
+                <hr>
 
                 <div class="post">
                   <hr>
@@ -19,14 +21,12 @@
               </div>
 
             </div>
-
-
-
           @endforeach
+        <div class = 'text-center'>
+          {!! $events->links(); !!}
 
-              <div class = 'text-center'>
-                {!! $events->links(); !!}
-              </div>
+      </div>
+
             </div>
         </div>
     </div>
