@@ -50,14 +50,14 @@
             <a href="{{ url('race/'.$event->slug) }}" class="btn btn-primary btn-block">View</a>
           </div>
 
-          <!-- <div class="col-sm-6">
+          <div class="col-sm-6">
               {!! Form::open(['route' =>['events.destroy', $event->id], 'method' => 'DELETE']) !!}
 
-              {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!} -->
+              {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
 
               {!! Form::close() !!}
 
-          <!-- </div> -->
+          </div>
         </div>
       </div>
    </div>
