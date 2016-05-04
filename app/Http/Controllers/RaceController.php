@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Event;
 use App\Review;
+use Session;
 
 class RaceController extends Controller
 {
@@ -22,7 +23,7 @@ class RaceController extends Controller
     $event = Event::where('slug', '=', $slug)->first();
     $reviews = Review::all();
 
-    $reviews = Review::orderBy('id', 'desc')->paginate(5);
+    $reviews = Review::orderBy('id', 'desc')->paginate(25);
     //return view and pass in post object
     return view('race.single',["reviews" => $reviews, "event" => $event]);
   }

@@ -8,8 +8,9 @@ use App\Event;
 class PagesController extends Controller
 {
   public function getIndex(){
-    $events = Event::orderBy('created_at', 'dsc')->limit(4)->get();
+    $events = Event::orderBy('created_at', 'dsc')->paginate(4);
     return view('pages.welcome')->withEvents($events);
+      
   }
 
   public function getAbout(){
