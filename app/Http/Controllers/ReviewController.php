@@ -67,6 +67,7 @@ class ReviewController extends Controller
       // Success Message
       Session::flash('success', 'Your review was succesfully added!');
 
+      // redirect to another page
       return redirect()->back();
 
     }

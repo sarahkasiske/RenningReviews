@@ -22,6 +22,7 @@ class RaceController extends Controller
     $event = Event::where('slug', '=', $slug)->first();
     $reviews = Review::all();
 
+    $reviews = Review::orderBy('id', 'desc')->paginate(5);
     //return view and pass in post object
     return view('race.single',["reviews" => $reviews, "event" => $event]);
   }

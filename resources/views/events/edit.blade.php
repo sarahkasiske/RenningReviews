@@ -16,18 +16,18 @@
      <!-- Race Month  -->
       {{ form::label('month','Race Month:')}}
       {{ Form::select('month', [
-         '1' => 'January',
-         '2' => 'February',
-         '3' => 'March',
-         '4' => 'April',
-         '5' => 'May',
-         '6' => 'June',
-         '7' => 'July',
-         '8' => 'August',
-         '9' => 'September',
-         '10' => 'October',
-         '11' => 'November',
-         '12' => 'December']
+         'January' => 'January',
+         'February' => 'February',
+         'March' => 'March',
+         'April' => 'April',
+         'May' => 'May',
+         'June' => 'June',
+         'July' => 'July',
+         'August' => 'August',
+         'September' => 'September',
+         'October' => 'October',
+         'November' => 'November',
+         'December' => 'December']
          , 'array', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]
         ) }}
     <!-- Race City  -->
@@ -38,6 +38,11 @@
      {{ form::label('state','State:')}}
      {!! Form::text('state', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Race State')) !!}
 
+    <!-- Distances  -->
+
+    {{ form::label('race_distance','Race Distance/Distances:')}}
+    {!! Form::text('race_distance', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Enter Race Distances')) !!}
+
     <!-- Occurence  -->
     {{ form::label('annual_occurence','Does this Race Occur Every Year?')}}
     {{ Form::select('annual_occurence', [
@@ -47,8 +52,13 @@
       ) }}
 
     <!-- Terrain -->
-    {{ form::label('terrain','Terrain:')}}
-    {!!  Form::select('terrain', ['Flat', 'Some Hills', 'Many Hills', 'Mountains'],  'S', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]) !!}
+    {{ Form::select('terrain', [
+       'Flat' => 'Flat',
+       'Some Hills' => 'Some Hills',
+       'Many Hills' => 'Many Hills',
+       'Mountains' => 'Mountains']
+       , 'array', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]
+      ) }}
 
     <!-- Race Desctiption -->
      {{ form::label('description','Race Description:')}}
@@ -80,10 +90,17 @@
           <div class="col-sm-6">
              {!! Form::submit('Save Changes', array('class'=>'btn btn-success btn-block')); !!}
           </div>
+
         </div>
       </div>
    </div>
-   {!! Form::close() !!}
+   <!-- {!! Form::close() !!}
+   {!! Form::open([
+            'method' => 'DELETE',
+            'route' => ['events.destroy', $event->id]
+        ]) !!}
+            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!} -->
    </div>
 
 @endsection

@@ -67,7 +67,6 @@ class EventController extends Controller
       $event->annual_occurence = $request->annual_occurence;
       $event->terrain = $request->terrain;
       $event->link = $request->link;
-      $event->picture = $request->picture;
       $event->race_distance = $request->race_distance;
 
       $event->save();
@@ -128,9 +127,9 @@ class EventController extends Controller
 
         else {
           $this->validate($request, array(
-            // 'race_name' => 'required|max:255',
-            // 'slug' => 'required|alpha_dash|min:5|max:255|unique:events,slug',
-            // 'description' => 'required'
+            'race_name' => 'required|max:255',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:events,slug',
+            'description' => 'required'
           ));
         }
 
@@ -147,6 +146,7 @@ class EventController extends Controller
         $event->terrain = $request->input('terrain');
         $event->description = $request->input ('description');
         $event->link = $request->input('link');
+        $event->race_distance = $request->input('race_distance');
 
         $event->save();
 

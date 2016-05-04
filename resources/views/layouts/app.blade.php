@@ -57,13 +57,13 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li><a href="{{ url('/race') }}">Races</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/about') }}">About</a></li>
-                </ul>
+                </ul> -->
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

@@ -4,12 +4,7 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
-      {!! Form::open([ 'route' => 'events.index', 'method' => 'GET', 'role' => 'search']) !!}
 
-      {!! Form::text('term', '',['class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'search...']) !!}
-
-      <p><a class="btn btn-primary btn-lg"  role="submit">Search!</a></p>
-      {!! Form::close() !!}
     <h1>All Posts</h1>
   </div>
 

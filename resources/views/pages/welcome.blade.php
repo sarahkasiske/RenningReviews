@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<img src="/Orlen_Warsaw_Marathon_2014_al._KEN.JPG" alt="Mountain View">
+<!-- <img src="/Orlen_Warsaw_Marathon_2014_al._KEN.JPG" alt="Mountain View"> -->
 <div class="container">
-
 
 
           @foreach($events as $event)

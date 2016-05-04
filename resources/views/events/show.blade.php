@@ -10,12 +10,18 @@
     <p> <strong>Race Month</strong> {{ $event->month}}</p>
     <p> <strong>City:</strong> {{ $event->city}}</p>
     <p> <strong>State:</strong> {{ $event->state}}</p>
-    <p> <strong>Is this an Annual Race?</strong> {{ $event->annual_occurence}}</p>
+    	<p><strong>Is this race Annual?</strong>
+				@if ($event->annual_occurence = 0)
+				<span>No</span>
+				@else
+				<span>Yes</span>
+				@endif
+			</p>
     <p> <strong>Description:</strong> {{ $event->description }}</p>
-    <p> <strong>Distance:</strong> {{ $event->distance}}</p>
+    <p> <strong>Distance:</strong> {{ $event->race_distance }}</p>
     <p> <strong>Race Link:</strong> {{ $event->link}}</p>
-    <p> <strong>Image:</strong> {{ $event->race_distance}}</p>
-    <p> <strong>Distances:</strong></p> <img> {{ $event->picture}} </img>
+    <p> <strong>Distance:</strong> {{ $event->race_distance}}</p>
+
 
   </div>
 
@@ -24,10 +30,6 @@
    <div class="col-md-4">
       <div class="well">
         <dl class="dl-horizontal">
-        <label>URL:</label>
-        <p><a href="{{ route('race.single', $event->slug) }}">{{route('race.single', $event->slug)}}</a></p>
-        </dl>
-
           <dl class="dl-horizontal">
           <label>Created At: Date</label>
           <p>{{date('M j, Y', strtotime($event->created_at)) }}</p>
@@ -39,10 +41,15 @@
         </dl>
         <hr>
         <div class="row">
-          <div class="col-sm-12">
-            {!! Html::linkRoute('events.edit', 'Edit', array($event->id), array('class' => 'btn btn-primary btn-block')) !!}
 
+          <div class="col-sm-6">
+            {!! Html::linkRoute('events.edit', 'Edit', array($event->id), array('class' => 'btn btn-success btn-block')) !!}
           </div>
+
+          <div class="col-sm-6">
+            <a href="{{ url('race/'.$event->slug) }}" class="btn btn-primary btn-block">View</a>
+          </div>
+
           <!-- <div class="col-sm-6">
               {!! Form::open(['route' =>['events.destroy', $event->id], 'method' => 'DELETE']) !!}
 

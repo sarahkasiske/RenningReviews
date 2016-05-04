@@ -9,10 +9,8 @@
             <div class="col-md-8 col-md-offset-2">
               <h1>Add a Race</h1>
               <hr>
-            
-              {!! Form::open(array('route' => 'events.store')) !!}
 
-              {{ Form::file('picture', ['class' => 'field']) }}
+              {!! Form::open(array('route' => 'events.store')) !!}
 
                <!-- Race Name  -->
                {{ form::label('race_name','Race Name:')}}
@@ -25,20 +23,21 @@
                <!-- Race Month  -->
                 {{ form::label('month','Race Month:')}}
                 {{ Form::select('month', [
-                   '1' => 'January',
-                   '2' => 'February',
-                   '3' => 'March',
-                   '4' => 'April',
-                   '5' => 'May',
-                   '6' => 'June',
-                   '7' => 'July',
-                   '8' => 'August',
-                   '9' => 'September',
-                   '10' => 'October',
-                   '11' => 'November',
-                   '12' => 'December']
+                   'January' => 'January',
+                   'February' => 'February',
+                   'March' => 'March',
+                   'April' => 'April',
+                   'May' => 'May',
+                   'June' => 'June',
+                   'July' => 'July',
+                   'August' => 'August',
+                   'September' => 'September',
+                   'October' => 'October',
+                   'November' => 'November',
+                   'December' => 'December']
                    , 'array', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]
                   ) }}
+
               <!-- Race City  -->
                {{ form::label('city','City:')}}
                {!! Form::text('city', null, array('class' => 'form-control', 'style'=> 'margin-bottom: 20px;', 'placeholder' => 'Race City')) !!}
@@ -54,14 +53,23 @@
               <!-- Occurence  -->
               {{ form::label('annual_occurence','Does this Race Occur Every Year?')}}
               {{ Form::select('annual_occurence', [
-                 '1' => 'Yes',
-                 '0' => 'No']
+                 'yes' => 'Yes',
+                 'no' => 'No']
                  , 'array', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]
                 ) }}
 
               <!-- Terrain -->
               {{ form::label('terrain','Terrain:')}}
-              {!!  Form::select('terrain', ['Flat', 'Some Hills', 'Many Hills', 'Mountains'],  'S', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]) !!}
+
+              {{ Form::select('terrain', [
+                 'Flat' => 'Flat',
+                 'Some Hills' => 'Some Hills',
+                 'Many Hills' => 'Many Hills',
+                 'Mountains' => 'Mountains']
+                 , 'array', ['class' => 'form-control', 'style'=> 'margin-bottom: 20px;' ]
+                ) }}
+
+      
 
 
               <!-- Race Desctiption -->
