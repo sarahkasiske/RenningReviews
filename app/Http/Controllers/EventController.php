@@ -23,7 +23,7 @@ class EventController extends Controller
     public function index()
     {
         //create a variable to store all races
-        $events = Event::orderBy('id', 'desc')->paginate(5);
+        $events = Event::orderBy('id', 'desc')->paginate(10);
 
         //return a view and pass in variable
         return view('events.index')->withevents($events);
