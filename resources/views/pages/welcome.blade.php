@@ -3,14 +3,12 @@
 @section('content')
 <!-- <img src="/Orlen_Warsaw_Marathon_2014_al._KEN.JPG" alt="Mountain View"> -->
 <div class="container">
-
+    <h1>Races</h1>
 
           @foreach($events as $event)
 
             <div class="row">
               <div class="col-md-10">
-                <h1>Races</h1>
-                <hr>
 
                 <div class="post">
                   <hr>
